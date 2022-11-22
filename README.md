@@ -193,7 +193,7 @@ If You wanna pass or save custom values then use the following code (max 5 value
         Intent intentData = getIntent();
         String price = intentData.getStringExtra("price");
 
-        jazzCash = new JazzCash(this, this, ResponseActivity.class, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here", "Add Custom Value if you wanna pass here",ResponseActivity.class);
+        jazzCash = new JazzCash(this, this, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here", "Add Custom Value if you wanna pass here",ResponseActivity.class);
 
         jazzCash.integrateNow();
 
@@ -235,7 +235,7 @@ If You wanna pass or save custom values then use the following code (max 5 value
         Intent intentData = getIntent();
         String price = intentData.getStringExtra("price");
 
-        jazzCash = new JazzCash(this, this, ResponseActivity.class, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here", "Add Custom Value if you wanna pass here");
+        jazzCash = new JazzCash(this, this, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here", "Add Custom Value if you wanna pass here");
 
         jazzCash.integrateNow();
 
