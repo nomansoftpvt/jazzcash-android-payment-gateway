@@ -280,3 +280,6 @@ Now Run and Test your app.
     </tr>
 </table>
 
+
+[![](https://jitpack.io/v/nomansoftpvt/jazzcash-android-payment-gateway.svg)](https://jitpack.io/#nomansoftpvt/jazzcash-android-payment-gateway)
+
