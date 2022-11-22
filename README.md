@@ -45,10 +45,24 @@ add three layouts as well
 3. activity_response.xml
 
 Add following code into your activity_main.xml
-
+for Result on Response Screen 
 ````
     <Button
         android:id="@+id/buyNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buy Now"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+````
+
+for Result on ActivityResult
+````
+    <Button
+        android:id="@+id/buyNowActivityResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Buy Now"
@@ -86,6 +100,7 @@ That's it for the xml files. Now move to the java files.
 
 Add the following code in MainActivity.java
 
+For Result on response screen
 ````
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,8 +121,66 @@ Add the following code in MainActivity.java
     }
 
 ````
+For Result on Activity Result
+````
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        BuyNowActivityResult = findViewById(R.id.buyNowActivityResult);
+
+        BuyNowActivityResult.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, PaymentActivity.class);
+            intent.putExtra("price", "1500.00");
+            jazzCashLauncher.launch(intent);
+
+        });
+
+    }
+
+````
+
+Also add this Launcher for ActivityResult
+````
+    ActivityResultLauncher<Intent> jazzCashLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        JazzCashResponse jazzCashResponse = (JazzCashResponse) data.getSerializableExtra(Constants.jazzCashResponse);
+                        Toast.makeText(MainActivity.this, jazzCashResponse.getPpResponseMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
+````
 
 Add the following code in PaymentActivity.java
+
+For Result on Response Screen add the destination screen param on last
+````
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_payment);
+
+        webView = findViewById(R.id.activity_payment_webview);
+
+        Intent intentData = getIntent();
+        String price = intentData.getStringExtra("price");
+
+        jazzCash = new JazzCash(this, this, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here",ResponseActivity.class);
+
+        jazzCash.integrateNow();
+
+
+    }
+````
+
+If You wanna pass or save custom values then use the following code (max 5 values)
 
 ````
     @Override
@@ -120,7 +193,28 @@ Add the following code in PaymentActivity.java
         Intent intentData = getIntent();
         String price = intentData.getStringExtra("price");
 
-        jazzCash = new JazzCash(this, this, ResponseActivity.class, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here");
+        jazzCash = new JazzCash(this, this, ResponseActivity.class, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here", "Add Custom Value if you wanna pass here",ResponseActivity.class);
+
+        jazzCash.integrateNow();
+
+
+    }
+````
+
+
+For Result on Activity Result Remove Destination Screen from params
+````
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_payment);
+
+        webView = findViewById(R.id.activity_payment_webview);
+
+        Intent intentData = getIntent();
+        String price = intentData.getStringExtra("price");
+
+        jazzCash = new JazzCash(this, this, webView, "Pass your JazzCash MerchantID here", "Pass your JazzCash password here", "Pass your JazzCash IntegritySalt Value here", "Pass your jazzCash Returnm Url here", "Pass the price here");
 
         jazzCash.integrateNow();
 
@@ -148,6 +242,7 @@ If You wanna pass or save custom values then use the following code (max 5 value
 
     }
 ````
+
 
 Add the following code in ResponseActivity.java
 
