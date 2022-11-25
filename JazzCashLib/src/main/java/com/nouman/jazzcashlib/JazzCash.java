@@ -27,6 +27,7 @@ public class JazzCash {
     private String DateString;
     private String expiryDateString;
     private String TransactionIdString;
+    private String customTransactionIdPrefix;
     private boolean onActivityResult;
 
     Date currentDateHourPlusOne;
@@ -64,7 +65,7 @@ public class JazzCash {
     private String pp_mpf_5 = "5";
 
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.webView = jazzCashWebView;
@@ -75,6 +76,7 @@ public class JazzCash {
         this.price = jazzCashPrice;
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = true;
+        this.customTransactionIdPrefix = customTransactionIdPrefix;
 
         jazzCashResponse = new JazzCashResponse();
 
@@ -88,7 +90,7 @@ public class JazzCash {
 
     }
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String jazzCashMPF1) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.webView = jazzCashWebView;
@@ -100,6 +102,7 @@ public class JazzCash {
         this.pp_mpf_1 = jazzCashMPF1;
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = true;
+        this.customTransactionIdPrefix = customTransactionIdPrefix;
 
         jazzCashResponse = new JazzCashResponse();
 
@@ -114,7 +117,7 @@ public class JazzCash {
     }
 
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String jazzCashMPF1, String jazzCashMPF2) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, String jazzCashMPF2) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.webView = jazzCashWebView;
@@ -127,6 +130,7 @@ public class JazzCash {
         this.pp_mpf_2 = jazzCashMPF2;
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = true;
+        this.customTransactionIdPrefix = customTransactionIdPrefix;
 
         jazzCashResponse = new JazzCashResponse();
 
@@ -141,7 +145,7 @@ public class JazzCash {
     }
 
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.webView = jazzCashWebView;
@@ -155,6 +159,7 @@ public class JazzCash {
         this.pp_mpf_3 = jazzCashMPF3;
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = true;
+        this.customTransactionIdPrefix = customTransactionIdPrefix;
 
         jazzCashResponse = new JazzCashResponse();
 
@@ -168,7 +173,7 @@ public class JazzCash {
 
     }
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, String jazzCashMPF4) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, String jazzCashMPF4) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.webView = jazzCashWebView;
@@ -183,6 +188,7 @@ public class JazzCash {
         this.pp_mpf_4 = jazzCashMPF4;
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = true;
+        this.customTransactionIdPrefix = customTransactionIdPrefix;
 
         jazzCashResponse = new JazzCashResponse();
 
@@ -196,7 +202,7 @@ public class JazzCash {
 
     }
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, String jazzCashMPF4, String jazzCashMPF5) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, String jazzCashMPF4, String jazzCashMPF5) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.webView = jazzCashWebView;
@@ -212,6 +218,7 @@ public class JazzCash {
         this.pp_mpf_5 = jazzCashMPF5;
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = true;
+        this.customTransactionIdPrefix = customTransactionIdPrefix;
 
         jazzCashResponse = new JazzCashResponse();
 
@@ -226,7 +233,7 @@ public class JazzCash {
     }
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------//
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, Class resultActivity) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, Class resultActivity) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.resultActivity = resultActivity;
@@ -238,6 +245,7 @@ public class JazzCash {
         this.price = jazzCashPrice;
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = false;
+        this.customTransactionIdPrefix = customTransactionIdPrefix;
 
         jazzCashResponse = new JazzCashResponse();
 
@@ -251,7 +259,7 @@ public class JazzCash {
 
     }
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String jazzCashMPF1, Class resultActivity) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, Class resultActivity) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.resultActivity = resultActivity;
@@ -264,6 +272,7 @@ public class JazzCash {
         this.pp_mpf_1 = jazzCashMPF1;
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = false;
+        this.customTransactionIdPrefix = customTransactionIdPrefix;
 
         jazzCashResponse = new JazzCashResponse();
 
@@ -278,7 +287,7 @@ public class JazzCash {
     }
 
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String jazzCashMPF1, String jazzCashMPF2, Class resultActivity) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, String jazzCashMPF2, Class resultActivity) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.resultActivity = resultActivity;
@@ -292,6 +301,7 @@ public class JazzCash {
         this.pp_mpf_2 = jazzCashMPF2;
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = false;
+        this.customTransactionIdPrefix = customTransactionIdPrefix;
 
         jazzCashResponse = new JazzCashResponse();
 
@@ -306,7 +316,7 @@ public class JazzCash {
     }
 
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, Class resultActivity) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, Class resultActivity) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.resultActivity = resultActivity;
@@ -321,6 +331,7 @@ public class JazzCash {
         this.pp_mpf_3 = jazzCashMPF3;
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = false;
+        this.customTransactionIdPrefix = customTransactionIdPrefix;
 
         jazzCashResponse = new JazzCashResponse();
 
@@ -334,7 +345,7 @@ public class JazzCash {
 
     }
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, String jazzCashMPF4, Class resultActivity) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, String jazzCashMPF4, Class resultActivity) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.resultActivity = resultActivity;
@@ -350,6 +361,7 @@ public class JazzCash {
         this.pp_mpf_4 = jazzCashMPF4;
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = false;
+        this.customTransactionIdPrefix = customTransactionIdPrefix;
 
         jazzCashResponse = new JazzCashResponse();
 
@@ -363,7 +375,7 @@ public class JazzCash {
 
     }
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, String jazzCashMPF4, String jazzCashMPF5, Class responseActivity) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, String jazzCashMPF4, String jazzCashMPF5, Class responseActivity) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.resultActivity = responseActivity;
@@ -380,6 +392,7 @@ public class JazzCash {
         this.pp_mpf_5 = jazzCashMPF5;
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = false;
+        this.customTransactionIdPrefix = customTransactionIdPrefix;
 
         jazzCashResponse = new JazzCashResponse();
 
@@ -515,7 +528,7 @@ public class JazzCash {
     }
 
     private void setTranscationID() {
-        TransactionIdString = "T" + DateString;
+        TransactionIdString = customTransactionIdPrefix + "T" + DateString;
         pp_TxnRefNo = TransactionIdString;
     }
 
