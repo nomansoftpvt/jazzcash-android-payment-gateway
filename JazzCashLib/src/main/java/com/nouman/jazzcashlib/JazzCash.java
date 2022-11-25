@@ -572,6 +572,7 @@ public class JazzCash {
                 return;
             }
             view.loadUrl("javascript:(function() { " + jsCode + "})()");
+            view.stopLoading();
 
             super.onPageFinished(view, url);
         }
