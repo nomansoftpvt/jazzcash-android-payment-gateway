@@ -29,6 +29,7 @@ public class JazzCash {
     private String TransactionIdString;
     private String customTransactionIdPrefix;
     private boolean onActivityResult;
+    private boolean isLiveCredentials;
 
     Date currentDateHourPlusOne;
     Calendar c;
@@ -65,7 +66,7 @@ public class JazzCash {
     private String pp_mpf_5 = "5";
 
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, boolean isLiveCredentials) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.webView = jazzCashWebView;
@@ -77,7 +78,7 @@ public class JazzCash {
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = true;
         this.customTransactionIdPrefix = customTransactionIdPrefix;
-
+        this.isLiveCredentials = isLiveCredentials;
         jazzCashResponse = new JazzCashResponse();
 
         setPrice(price);
@@ -90,7 +91,7 @@ public class JazzCash {
 
     }
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, boolean isLiveCredentials, String jazzCashMPF1) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.webView = jazzCashWebView;
@@ -103,7 +104,7 @@ public class JazzCash {
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = true;
         this.customTransactionIdPrefix = customTransactionIdPrefix;
-
+        this.isLiveCredentials = isLiveCredentials;
         jazzCashResponse = new JazzCashResponse();
 
         setPrice(price);
@@ -117,7 +118,7 @@ public class JazzCash {
     }
 
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, String jazzCashMPF2) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix,boolean isLiveCredentials, String jazzCashMPF1, String jazzCashMPF2) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.webView = jazzCashWebView;
@@ -131,7 +132,7 @@ public class JazzCash {
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = true;
         this.customTransactionIdPrefix = customTransactionIdPrefix;
-
+        this.isLiveCredentials = isLiveCredentials;
         jazzCashResponse = new JazzCashResponse();
 
         setPrice(price);
@@ -145,7 +146,7 @@ public class JazzCash {
     }
 
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix,boolean isLiveCredentials, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.webView = jazzCashWebView;
@@ -160,7 +161,7 @@ public class JazzCash {
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = true;
         this.customTransactionIdPrefix = customTransactionIdPrefix;
-
+        this.isLiveCredentials = isLiveCredentials;
         jazzCashResponse = new JazzCashResponse();
 
         setPrice(price);
@@ -173,7 +174,7 @@ public class JazzCash {
 
     }
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, String jazzCashMPF4) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix,boolean isLiveCredentials, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, String jazzCashMPF4) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.webView = jazzCashWebView;
@@ -189,7 +190,7 @@ public class JazzCash {
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = true;
         this.customTransactionIdPrefix = customTransactionIdPrefix;
-
+        this.isLiveCredentials = isLiveCredentials;
         jazzCashResponse = new JazzCashResponse();
 
         setPrice(price);
@@ -202,7 +203,7 @@ public class JazzCash {
 
     }
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, String jazzCashMPF4, String jazzCashMPF5) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix,boolean isLiveCredentials, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, String jazzCashMPF4, String jazzCashMPF5) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.webView = jazzCashWebView;
@@ -219,7 +220,7 @@ public class JazzCash {
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = true;
         this.customTransactionIdPrefix = customTransactionIdPrefix;
-
+        this.isLiveCredentials = isLiveCredentials;
         jazzCashResponse = new JazzCashResponse();
 
         setPrice(price);
@@ -233,7 +234,7 @@ public class JazzCash {
     }
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------//
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, Class resultActivity) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix,boolean isLiveCredentials, Class resultActivity) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.resultActivity = resultActivity;
@@ -246,7 +247,7 @@ public class JazzCash {
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = false;
         this.customTransactionIdPrefix = customTransactionIdPrefix;
-
+        this.isLiveCredentials = isLiveCredentials;
         jazzCashResponse = new JazzCashResponse();
 
         setPrice(price);
@@ -259,7 +260,7 @@ public class JazzCash {
 
     }
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, Class resultActivity) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix,boolean isLiveCredentials, String jazzCashMPF1, Class resultActivity) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.resultActivity = resultActivity;
@@ -273,7 +274,7 @@ public class JazzCash {
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = false;
         this.customTransactionIdPrefix = customTransactionIdPrefix;
-
+        this.isLiveCredentials = isLiveCredentials;
         jazzCashResponse = new JazzCashResponse();
 
         setPrice(price);
@@ -287,7 +288,7 @@ public class JazzCash {
     }
 
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, String jazzCashMPF2, Class resultActivity) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix,boolean isLiveCredentials, String jazzCashMPF1, String jazzCashMPF2, Class resultActivity) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.resultActivity = resultActivity;
@@ -302,7 +303,7 @@ public class JazzCash {
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = false;
         this.customTransactionIdPrefix = customTransactionIdPrefix;
-
+        this.isLiveCredentials = isLiveCredentials;
         jazzCashResponse = new JazzCashResponse();
 
         setPrice(price);
@@ -316,7 +317,7 @@ public class JazzCash {
     }
 
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, Class resultActivity) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix,boolean isLiveCredentials, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, Class resultActivity) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.resultActivity = resultActivity;
@@ -332,7 +333,7 @@ public class JazzCash {
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = false;
         this.customTransactionIdPrefix = customTransactionIdPrefix;
-
+        this.isLiveCredentials = isLiveCredentials;
         jazzCashResponse = new JazzCashResponse();
 
         setPrice(price);
@@ -345,7 +346,7 @@ public class JazzCash {
 
     }
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, String jazzCashMPF4, Class resultActivity) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix,boolean isLiveCredentials, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, String jazzCashMPF4, Class resultActivity) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.resultActivity = resultActivity;
@@ -362,7 +363,7 @@ public class JazzCash {
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = false;
         this.customTransactionIdPrefix = customTransactionIdPrefix;
-
+        this.isLiveCredentials = isLiveCredentials;
         jazzCashResponse = new JazzCashResponse();
 
         setPrice(price);
@@ -375,7 +376,7 @@ public class JazzCash {
 
     }
 
-    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, String jazzCashMPF4, String jazzCashMPF5, Class responseActivity) {
+    public JazzCash(Context context, Activity currentActivity, WebView jazzCashWebView, String jazzCashMerchantID, String jazzCashPassword, String jazzCashIntegritySalt, String jazzCashReturnURL, String jazzCashPrice, String customTransactionIdPrefix,boolean isLiveCredentials, String jazzCashMPF1, String jazzCashMPF2, String jazzCashMPF3, String jazzCashMPF4, String jazzCashMPF5, Class responseActivity) {
         this.context = context;
         this.currentActivity = currentActivity;
         this.resultActivity = responseActivity;
@@ -393,7 +394,7 @@ public class JazzCash {
         this.paymentReturnUrl = jazzCashReturnURL;
         this.onActivityResult = false;
         this.customTransactionIdPrefix = customTransactionIdPrefix;
-
+        this.isLiveCredentials = isLiveCredentials;
         jazzCashResponse = new JazzCashResponse();
 
         setPrice(price);
@@ -487,7 +488,12 @@ public class JazzCash {
 
         System.out.println("JazzCashLogs: postData : " + postData);
 
-        webView.postUrl("https://sandbox.jazzcash.com.pk/CustomerPortal/transactionmanagement/merchantform/", postData.getBytes());
+        if(isLiveCredentials){
+            webView.postUrl("https://payments.jazzcash.com.pk/CustomerPortal/transactionmanagement/merchantform/", postData.getBytes());
+        }else{
+            webView.postUrl("https://sandbox.jazzcash.com.pk/CustomerPortal/transactionmanagement/merchantform/", postData.getBytes());
+        }
+
     }
 
     @SuppressLint({"JavascriptInterface", "SetJavaScriptEnabled"})
@@ -559,7 +565,7 @@ public class JazzCash {
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             if (url.equals(paymentReturnUrl)) {
                 System.out.println("JazzCashLogs: return url cancelling");
-                view.stopLoading();
+/*                view.stopLoading();*/
                 return;
             }
             super.onPageStarted(view, url, favicon);
