@@ -13,7 +13,7 @@ allprojects {
 Add the following dependency into your app build.Gradle
 
 ````
-implementation 'com.github.nomansoftpvt:jazzcash-android-payment-gateway:1.2'
+implementation 'com.github.nomansoftpvt:jazzcash-android-payment-gateway:1.5'
 ````
 
 For Gradle Version 7.0 >
